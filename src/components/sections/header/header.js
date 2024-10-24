@@ -13,7 +13,7 @@ function header() {
             <img src={brainflixLogo} alt="BrainFlix Logo" className="header__logo"/>
             <div className="header-nav">
                 <input className="header-nav__search" placeholder="search"></input>
-                <img className="header-nav__search--icon" src={searchIcon} alt="search icon" />
+                <img className="header-nav__searchIcon" src={searchIcon} alt="search icon" />
             </div>
             <a className="header-nav__btn" href="">
                 <img src={uploadIcon} alt="upload icon"/>
