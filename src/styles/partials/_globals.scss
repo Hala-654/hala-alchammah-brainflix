@@ -14,3 +14,10 @@ section {
   padding: 1rem;
   margin: 1rem 0;
 }
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+}

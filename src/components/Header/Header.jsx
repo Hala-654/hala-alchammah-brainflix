@@ -12,30 +12,29 @@ function Header() {
         <img
           src={brainflixLogo}
           alt="BrainFlix Logo"
-          className="header__link--logo"
         />
       </a>
-
-      <div className="header-nav">
-        <img
-          className="header-nav__searchIcon"
+      <div className="header__search--section">
+      <img
+          className="header__search--icon"
           src={searchIcon}
           alt="search icon"
+        
         />
         <input
-          className="header-nav__search"
+          className="header__search--bar"
           type="text"
           placeholder="Search"
         ></input>
+        <img className="header__avatar" src={mohanAvatar} alt="Mohan Avatar" />
       </div>
 
-      <div>
-        <button className="header-nav__btn">
+      <div className="header__btn--section">
+        <button className="header__button">
           <img src={uploadIcon} alt="upload icon" />
           Upload
         </button>
       </div>
-      <img className="header__avatar" src={mohanAvatar} alt="Mohan Avatar" />
     </header>
   );
 }
