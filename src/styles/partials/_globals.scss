@@ -1,4 +1,5 @@
 @use "./typography";
+@use "./variables" as *;
 
 * {
   box-sizing: border-box;
@@ -6,4 +7,10 @@
 
 body {
   font-family: "Avenir";
+  margin: 0;
+}
+
+section {
+  padding: 1rem;
+  margin: 1rem 0;
 }
