@@ -28,8 +28,7 @@ function Video() {
         <div className="controls-right">
           <button
             className="controls-right__fullscreen"
-            onClick={handleFullscreen}
-          >
+            onClick={handleFullscreen} >
             <img src={fullscreen} alt="fullscreen icon" />
           </button>
           <button className="controls-right__volumn" onClick={handleVolume}>
