@@ -1,0 +1,119 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+h1 {
+  border: none;
+}
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.section--comments {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 0.0625rem solid $Silver;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &__title {
+    color: $Silver;
+    font-weight: 400;
+  }
+  &__add--comments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  &__img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin: 0;
+  }
+  &__form {
+    width: 100%;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+  &__text {
+    width: 100%;
+    padding: 0.625rem;
+    border: 0.0625rem solid $Silver;
+    background-color: $White;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    color: $BrainFlix-Black;
+    resize: none;
+  }
+  &__btn {
+    margin-top: 0.625rem;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 38%;
+    padding: 0 1rem;
+    background-color: $BrainFlix-Blue;
+    color: $White;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  margin: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 0.0625rem solid $Silver;
+
+  &__avatar {
+    background-color: $Silver;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 8rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 1rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  &__name {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  &__timestamp {
+    font-size: 1rem;
+    color: $Silver;
+  }
+}

@@ -10,13 +10,18 @@ function Body() {
         {/* line */}
         <div className="body__author--info">
           <h3>By Aiden Thompson</h3>
-          <p>8/8/2023</p>
+          <p className="silver">8/8/2023</p>
         </div>
         <div className="body__author--icon">
-          <p><img src={views} alt="views icon" />
-           980,000</p>
-          <p><img src={likes} alt="likes icon" />
-           22,479</p>
+          <div className="silver">
+            <img src={views} alt="views icon" />
+            980,544
+          </div>
+
+          <p className="silver">
+            <img src={likes} alt="likes icon" />
+            22,479
+          </p>
         </div>
       </div>
 
