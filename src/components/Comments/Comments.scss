@@ -15,21 +15,29 @@ img {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
+  font-family: 'Avenir';
 }
 .comments {
   display: flex;
   flex-direction: column;
-  margin: 1.25rem;
   padding-top: 1.25rem;
   border-top: 0.0625rem solid $Silver;
+  font-family: 'Avenir';
+
 
   &:first-child {
     border-top: none;
   }
 
+  &__number {
+    padding-left: 1rem;
+  }
   &__title {
     color: $Silver;
-    font-weight: 400;
+    font-weight: 600;
+    padding-left: 16%;
+    padding-bottom: 0;
+    font-size: 1rem;
   }
   &__add--comments {
     display: flex;
@@ -46,7 +54,7 @@ img {
     margin: 0;
   }
   &__form {
-    width: 100%;
+    width: 75%;
   }
 
   &__list {

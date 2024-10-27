@@ -2,9 +2,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/globals" as *;
 
-img {
-//   margin: 0.5rem 0.5rem 0 0;
-}
 h1 {
   font-family: "Avenir";
   padding: 1rem 0;
@@ -14,6 +11,7 @@ h1 {
 }
 h3 {
   padding: 0;
+  margin: 0;
   font-weight: 600;
 }
 
@@ -50,5 +48,5 @@ h3 {
   }
 }
 .body__text {
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
 }

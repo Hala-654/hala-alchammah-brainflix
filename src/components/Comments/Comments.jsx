@@ -7,7 +7,8 @@ function Comments({ comments }) {
   return (
     <div className="section--comments">
       <div className="comments">
-        <h1 className="comments__title">Join the Conversation</h1>
+        <h3 className="comments__number">3 Comments</h3>
+        <h1 className="comments__title">JOIN THE CONVERSATION</h1>
         <div className="comments__add--comments">
           <div className="comments__img">
             <img src={mohanAvatar} alt="comment profile picture" />
@@ -20,12 +21,13 @@ function Comments({ comments }) {
                 name="user_comment"
                 rows="4"
                 placeholder="Add a new comment"
-                spellCheck="true">
-              </textarea>
+                spellCheck="true"
+              ></textarea>
               <button
                 id="add-comment"
                 className="comments__button"
-                type="submit">
+                type="submit"
+              >
                 <img src={addComment} alt="Add comment icon" />
                 <p>COMMENT</p>
               </button>

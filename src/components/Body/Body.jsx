@@ -7,7 +7,6 @@ function Body() {
     <div className="body-container">
       <h1> The Future of Artificial Intelligence </h1>
       <div className="body__author">
-        {/* line */}
         <div className="body__author--info">
           <h3>By Aiden Thompson</h3>
           <p className="silver">8/8/2023</p>
@@ -24,8 +23,6 @@ function Body() {
           </p>
         </div>
       </div>
-
-      {/* line */}
       <div className="body__text">
         <span>
           Explore the cutting-edge developments and predictions for Artificial
@@ -36,7 +33,6 @@ function Body() {
           interplay between innovation, ethics, and the ever-evolving tech
           frontier.
         </span>
-        <h3>3 Comments</h3>
       </div>
     </div>
   );
