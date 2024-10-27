@@ -29,9 +29,9 @@ function Header() {
         <img className="header__avatar" src={mohanAvatar} alt="Mohan Avatar" />
       </div>
 
-      <div className="header__btn--section">
+      <div>
         <button className="header__button">
-          <img src={uploadIcon} alt="upload icon" />
+          <img className="header__button--icon" src={uploadIcon} alt="upload icon" />
           Upload
         </button>
       </div>
