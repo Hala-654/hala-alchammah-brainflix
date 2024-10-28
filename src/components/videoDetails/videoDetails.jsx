@@ -1,8 +1,8 @@
-import "../Body/Body.scss";
+import "../videoDetails/videoDetails.scss";
 import views from "../../assets/Icons/views.svg";
 import likes from "../../assets/Icons/likes.svg";
 
-function Body() {
+function videoDetails() {
   return (
     <div className="body-container">
       <h1> The Future of Artificial Intelligence </h1>
@@ -37,4 +37,4 @@ function Body() {
     </div>
   );
 }
-export default Body;
+export default videoDetails;

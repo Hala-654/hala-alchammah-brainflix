@@ -1,7 +1,7 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Video from "./components/Video/Video";
-import Body from "./components/Body/Body";
+import videoDetails from "./components/videoDetails/videoDetails";
 import Comments from "./components/Comments/Comments";
 // import NextVideos from "./components/NextVideos/NextVideos";
 // import videoDetails from "../src/data/video-details.json";
@@ -32,7 +32,7 @@ function App() {
     <>
       <Header />
       <Video />
-      <Body />
+      <videoDetails />
       <Comments comments={commentsData} />
       {/* <NextVideos/> */}
     </>

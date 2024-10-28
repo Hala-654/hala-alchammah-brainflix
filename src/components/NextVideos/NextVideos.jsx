@@ -1,3 +1,3 @@
 import "../NextVideos/NextVideos.scss";
-import videoDetails from "../../data/video-details.json";
+// import videoDetails from "../../data/video-details.json";
 
