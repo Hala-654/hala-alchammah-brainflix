@@ -35,7 +35,7 @@ function Header() {
             src={uploadIcon}
             alt="upload icon"
           />
-          Upload
+          <p>UPLOAD</p>
         </button>
       </div>
     </header>
