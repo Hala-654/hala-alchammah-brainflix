@@ -45,6 +45,10 @@ img {
     justify-content: center;
     gap: 1.25rem;
     align-items: stretch;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
   }
   &__img {
     width: 3rem;
@@ -55,6 +59,10 @@ img {
   }
   &__form {
     width: 75%;
+    // @include tablet {
+    //   display: flex;
+    //   flex-direction: row;
+    // }
   }
 
   &__list {
@@ -99,15 +107,17 @@ img {
   border-top: 0.0625rem solid $Silver;
 
   &__avatar {
-    background-color: $Silver;
+    background-color: $Mercury;
     background-repeat: no-repeat;
     background-size: cover;
-    // background-position: center;
     width: 8rem;
     height: 3rem;
-    // object-fit: cover;
     border-radius: 50%;
     margin: 0 1rem 0 1.5rem;
+    @include tablet {
+      width: 6rem;
+      height: 3rem;
+    }
   }
   &__header {
     display: flex;
