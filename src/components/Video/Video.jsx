@@ -5,27 +5,27 @@ import volume from "../../assets/Icons/volume_up.svg";
 import fullscreen from "../../assets/Icons/fullscreen.svg";
 
 function Video() {
-  const handlePlay = () => {
-    console.log("Play button was clicked");
-  };
-  const handleVolume = () => {
-    console.log("Volume button was clicked");
-  };
-  const handleFullscreen = () => {
-    console.log("Fullscreen button was clicked");
-  };
+  // const handlePlay = () => {
+  //   console.log("Play button was clicked");
+  // };
+  // const handleVolume = () => {
+  //   console.log("Volume button was clicked");
+  // };
+  // const handleFullscreen = () => {
+  //   console.log("Fullscreen button was clicked");
+  // };
 
   return (
     <div className="video-container">
-      <video poster={uploadVideo} className="video" />
+      <video poster={uploadVideo} className="video" controls />
       <div className="controls">
-        <div className="controls-left">
+        {/* <div className="controls-left">
           <button className="controls-left__play" onClick={handlePlay}>
             <img src={play} alt="play icon" />
           </button>
-        </div>
+        </div> */}
 
-        <div className="controls-right">
+        {/* <div className="controls-right">
           <button
             className="controls-right__fullscreen"
             onClick={handleFullscreen} >
@@ -34,7 +34,7 @@ function Video() {
           <button className="controls-right__volumn" onClick={handleVolume}>
             <img src={volume} alt="volumn icon" />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
