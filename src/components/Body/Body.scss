@@ -1,0 +1,46 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+img {
+  margin: 0 0.5rem 0 0;
+}
+h1 {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 0.025rem solid $Silver;
+  font-weight: 600;
+}
+h3 {
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
+p {
+  color: $Silver;
+}
+
+.body-container {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1rem;
+}
+.body__author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border-bottom: 0.025rem solid $Silver;
+  margin: 0 1rem;
+  gap: 1.5rem;
+
+  &--info {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  &--icon {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+}
+.body__text {
+  margin: 0.5rem 1rem;
+}
