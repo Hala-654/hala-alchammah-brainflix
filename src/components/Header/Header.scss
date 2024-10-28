@@ -19,6 +19,8 @@
     display: flex;
     align-items: center;
     margin: 1rem;
+    padding-bottom: 56.25%; // 16:9 ratio
+
   }
   &__search--bar {
     width: 100%;

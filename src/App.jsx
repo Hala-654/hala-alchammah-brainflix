@@ -8,11 +8,6 @@ import { useState } from "react";
 import videoDetails from "../src/data/video-details.json";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]); // Start with the first video
-  const handleVideoSelect = (id) => {
-    const newVideo = videoDetails.find((video) => video.id === id);
-    setSelectedVideo(newVideo);
-  };
 
   const commentsData = [
     {
