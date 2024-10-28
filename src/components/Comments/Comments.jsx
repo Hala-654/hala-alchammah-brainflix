@@ -1,4 +1,3 @@
-import React from "react";
 import "../Comments/Comments.scss";
 import mohanAvatar from "../../assets/images/Mohan-muruge.jpg";
 import addComment from "../../assets/Icons/add_comment.svg";
@@ -26,8 +25,7 @@ function Comments({ comments }) {
               <button
                 id="add-comment"
                 className="comments__button"
-                type="submit"
-              >
+                type="">
                 <img src={addComment} alt="Add comment icon" />
                 <p>COMMENT</p>
               </button>

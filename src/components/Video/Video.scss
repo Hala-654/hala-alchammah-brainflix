@@ -20,20 +20,20 @@
 
 .controls {
   position: absolute;
-  bottom: 20px;
+  bottom: 1.25rem;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: .3125rem;
   transition: opacity 0.3s ease;
 }
 
