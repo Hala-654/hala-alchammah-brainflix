@@ -9,29 +9,32 @@ function Header() {
   return (
     <header className="header">
       <a className="header__link" href="/">
-        <img
-          src={brainflixLogo}
-          alt="BrainFlix Logo"
-        />
+        <img src={brainflixLogo} alt="BrainFlix Logo" />
       </a>
       <div className="header__search--section">
-      <img
-          className="header__search--icon"
-          src={searchIcon}
-          alt="search icon"
-        
-        />
-        <input
-          className="header__search--bar"
-          type="text"
-          placeholder="Search"
-        ></input>
+        <div className="header__search--container">
+          <img
+            className="header__search--icon"
+            src={searchIcon}
+            alt="search icon"
+          />
+          <input
+            className="header__search--bar"
+            type="text"
+            placeholder="Search"
+          ></input>
+        </div>
+
         <img className="header__avatar" src={mohanAvatar} alt="Mohan Avatar" />
       </div>
 
       <div>
         <button className="header__button">
-          <img className="header__button--icon" src={uploadIcon} alt="upload icon" />
+          <img
+            className="header__button--icon"
+            src={uploadIcon}
+            alt="upload icon"
+          />
           Upload
         </button>
       </div>
