@@ -7,8 +7,6 @@ function Video() {
   return (
     <div className="video-container">
       <video poster={uploadVideo} className="video" controls />
-      <div className="controls">
-      </div>
     </div>
   );
 }
