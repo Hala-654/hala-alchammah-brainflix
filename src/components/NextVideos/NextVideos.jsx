@@ -11,13 +11,9 @@ function NextVideos({ selectedVideo, videosData, handleClick }) {
     <div className="NextVideos">
       <h3 className="NextVideos__title">NEXT VIDEOS</h3>
       {videoData.map((video) => (
-        <div className="NextVideos__content" onClick={() => handleClick(video)}>
+        <div key={video.id} className="NextVideos__content" onClick={() => handleClick(video)}>
           <div>
-            <img
-              src={video.image}
-              className="NextVideos__img"
-              alt="video cover image"
-            />
+            <img src={video.image} className="NextVideos__img" alt="video cover image" />
           </div>
           <div className="NextVideos__description">
             <h3 className="NextVideos__video--title">{video.title}</h3>
