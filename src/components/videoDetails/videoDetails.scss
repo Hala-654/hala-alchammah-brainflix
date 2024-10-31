@@ -1,0 +1,80 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/globals" as *;
+
+h1 {
+  font-family: "Avenir";
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 0.025rem solid $Silver;
+  font-weight: 600;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.silver {
+  color: $Silver;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.body-container {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1rem;
+}
+.body__author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border-bottom: 0.025rem solid $Silver;
+  border-top: 0.025rem solid $Silver;
+  margin: 0 1rem;
+  gap: 5rem;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: none;
+  }
+
+  &--info {
+    flex-direction: column;
+    padding: 0.5rem;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  &--icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+.body__text {
+  margin: 1rem 1rem 0 1rem;
+  @include tablet {
+    margin: 0.5rem 1rem 0 1rem;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+}

@@ -1,12 +1,10 @@
-import "../Video/Video.scss";
+import "../MainVideo/MainVideo.scss";
 import uploadVideo from "../../assets/images/Upload-video-preview.jpg";
 
-
-function Video() {
-
+function Video({ selectedVideo }) {
   return (
     <div className="video-container">
-      <video poster={uploadVideo} className="video" controls />
+      <video poster={selectedVideo.image} className="video" controls />
     </div>
   );
 }

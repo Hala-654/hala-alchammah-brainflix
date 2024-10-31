@@ -3,7 +3,7 @@ import searchIcon from "../../assets/Icons/search.svg";
 import uploadIcon from "../../assets/Icons/upload.svg";
 import mohanAvatar from "../../assets/images/Mohan-muruge.jpg";
 
-import "./Header.scss";
+import "../Header/Header.scss";
 
 function Header() {
   return (

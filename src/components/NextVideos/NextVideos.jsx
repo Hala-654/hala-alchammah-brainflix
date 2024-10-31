@@ -1,32 +1,31 @@
 import "../NextVideos/NextVideos.scss";
-import videoDetails from "../../data/video-details.json";
 import { useState } from "react";
-import Video from "../Video/Video";
+import videoData from "../../data/video-details.json";
 
-function NextVideos({avatar}) {
-    const [playingVideo, setPlayingVideo] = useState(videoDetails[0]);
-    const videoList = videoDetails.filter((Video)=> video.id !== playingVideo.id);
+// NextVideos function to define a video playing and a list of next video by id that exclude the currently playing video
+// returns video details, comment form, and comment list from json file
+function NextVideos({ selectedVideo, videosData, handleClick }) {
+  const videoData = videosData.filter((video) => video.id !== selectedVideo.id);
 
-    function handleClick (obj) {
-        setPlayingVideo(obj);
-    }
-
-    return (
-        <div className ="NextVideos">
-        <playingVideo playingVideo={playingVideo}/>
-        <div className="NextVideos__content">
-            <div className="NextVideos__playing-video">
-                <videoDetails playingVideo={playingVideo}/>
-                <CommentForm playingVideo={playingVideo}/>
-                <CommentList playingVideo={playingVideo}/>
-            </div>
-            <videoList NextVideos={videoList} handleClick={handleClick}/>
+  return (
+    <div className="NextVideos">
+      <h3 className="NextVideos__title">NEXT VIDEOS</h3>
+      {videoData.map((video) => (
+        <div className="NextVideos__content" onClick={() => handleClick(video)}>
+          <div>
+            <img
+              src={video.image}
+              className="NextVideos__img"
+              alt="video cover image"
+            />
+          </div>
+          <div className="NextVideos__description">
+            <h3 className="NextVideos__video--title">{video.title}</h3>
+            <p className="NextVideos__video--channel">{video.channel}</p>
+          </div>
         </div>
-        </div>
-    )
-
-};
-
+      ))}
+    </div>
+  );
+}
 export default NextVideos;
-
-

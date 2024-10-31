@@ -1,21 +1,30 @@
+import { useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import Video from "./components/Video/Video";
-import Details from "./components/Details/Details";
+import MainVideo from "./components/MainVideo/MainVideo";
+import VideoDetails from "./components/VideoDetails/VideoDetails";
 import Comments from "./components/Comments/Comments";
+import videosData from "./data/video-details.json";
 import NextVideos from "./components/NextVideos/NextVideos";
-import VideoList from "./components/VideoList/VideoList";
-// import videoDetails from "../src/data/video-details.json";
 
 function App() {
+  const [selectedVideo, setSelecetedVideo] = useState(videosData[0]);
+  function handleClick(selectedVideo) {
+    setSelecetedVideo(selectedVideo);
+  }
   return (
     <>
       <Header />
-      <Video />
-      <Details />
-      {/* <Comments comments={commentsData} /> */}
-      <NextVideos />
-      <VideoList />
+      <MainVideo selectedVideo={selectedVideo} />
+      <VideoDetails selectedVideo={selectedVideo} />
+      <Comments selectedVideo={selectedVideo} />
+      <div>
+        <NextVideos
+          selectedVideo={selectedVideo}
+          videosData={videosData}
+          handleClick={handleClick}
+        />
+      </div>
     </>
   );
 }
