@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "../../components/Header/Header";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import Comments from "../../components/Comments/Comments";
@@ -14,7 +13,6 @@ function VideoDetailsPage() {
     }
     return (
       <>
-        <Header />
         <MainVideo selectedVideo={selectedVideo} />
         <VideoDetails selectedVideo={selectedVideo} />
         <Comments selectedVideo={selectedVideo} />
