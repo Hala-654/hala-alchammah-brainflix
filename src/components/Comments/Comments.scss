@@ -5,25 +5,20 @@
 h1 {
   border: none;
 }
-img {
-  height: 100%;
-  object-fit: cover;
-}
 
 .section--comments {
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-  font-family: 'Avenir';
+  font-family: "Avenir";
 }
 .comments {
   display: flex;
   flex-direction: column;
   padding-top: 1.25rem;
   border-top: 0.0625rem solid $Silver;
-  font-family: 'Avenir';
-
+  font-family: "Avenir";
 
   &:first-child {
     border-top: none;
@@ -48,21 +43,25 @@ img {
     @include tablet {
       display: flex;
       flex-direction: row;
+      justify-content: space-evenly;
+      gap: 1rem;
     }
   }
   &__img {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 1.5rem;
     overflow: hidden;
     margin: 0;
   }
   &__form {
     width: 75%;
-    // @include tablet {
-    //   display: flex;
-    //   flex-direction: row;
-    // }
+    @include tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   &__list {
@@ -78,6 +77,27 @@ img {
     font-family: inherit;
     color: $BrainFlix-Black;
     resize: none;
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      width: 100%;
+      padding: 0.625rem;
+      border: 0.0625rem solid $Silver;
+      background-color: $White;
+      border-radius: 0.25rem;
+      font-family: inherit;
+      color: $BrainFlix-Black;
+
+      @include tablet {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
   }
   &__btn {
     margin-top: 0.625rem;
@@ -99,24 +119,33 @@ img {
   }
 }
 
+.display-comments__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
 .comment {
   display: flex;
   flex-direction: row;
   margin: 1.25rem;
   padding-top: 1.25rem;
   border-top: 0.0625rem solid $Silver;
+  @include desktop {
+    justify-content: space-evenly;
+  }
 
   &__avatar {
     background-color: $Mercury;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 8rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     margin: 0 1rem 0 1.5rem;
+    flex-shrink: 0;
     @include tablet {
-      width: 6rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
   &__header {
