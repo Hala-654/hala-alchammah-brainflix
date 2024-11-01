@@ -1,7 +1,7 @@
 import "../Comments/Comments.scss";
-import videoDetails from "../../data/video-details.json";
 import mohanAvatar from "../../assets/images/Mohan-muruge.jpg";
 import addComment from "../../assets/Icons/add_comment.svg";
+import { Link } from "react-router-dom";
 
 function Comments({ selectedVideo }) {
   return (
@@ -37,10 +37,12 @@ function Comments({ selectedVideo }) {
                 placeholder="Add a new comment"
                 spellCheck="true"
               ></textarea>
-              <button id="add-comment" className="comments__button" type="">
-                <img src={addComment} alt="Add comment icon" />
-                <p>COMMENT</p>
-              </button>
+              <Link to={`/`}>
+                <button className="comments__button">
+                  <img src={addComment} alt="Add comment icon" />
+                  <p>COMMENT</p>
+                </button>
+              </Link>
             </form>
           </div>
         </div>

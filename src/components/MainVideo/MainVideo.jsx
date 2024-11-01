@@ -1,5 +1,4 @@
 import "../MainVideo/MainVideo.scss";
-import uploadVideo from "../../assets/images/Upload-video-preview.jpg";
 
 function Video({ selectedVideo }) {
   return (
