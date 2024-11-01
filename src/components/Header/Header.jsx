@@ -2,6 +2,8 @@ import brainflixLogo from "../../assets/Logo/BrainFlix-logo.svg";
 import searchIcon from "../../assets/Icons/search.svg";
 import uploadIcon from "../../assets/Icons/upload.svg";
 import mohanAvatar from "../../assets/images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
+import VideoUploadPage from "../../pages/VideoUploadPage/VideoUploadPage";
 
 import "../Header/Header.scss";
 
@@ -29,14 +31,16 @@ function Header() {
       </div>
 
       <div>
-        <button className="header__button">
-          <img
-            className="header__button--icon"
-            src={uploadIcon}
-            alt="upload icon"
-          />
-          <p>UPLOAD</p>
-        </button>
+        <Link to={`/upload`}>
+          <button className="header__button">
+            <img
+              className="header__button--icon"
+              src={uploadIcon}
+              alt="upload icon"
+            />
+            <p>UPLOAD</p>
+          </button>
+        </Link>
       </div>
     </header>
   );

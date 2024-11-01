@@ -70,6 +70,7 @@
     background-color: $BrainFlix-Blue;
     color: $Alabaster;
     width: 100%;
+    cursor: pointer;
     @include tablet {
       gap: 0;
       height: 3rem;
