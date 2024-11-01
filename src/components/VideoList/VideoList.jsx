@@ -1,15 +1,17 @@
 import "../NextVideos/NextVideos.scss";
-import videoDetails from "../../data/video-details.json";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function VideoList({ nextVideos, handleClick }) {
+function VideoList({ nextVideos }) {
   return (
-    <section className="nextVideos">
-      <h2 className="nextVideos__title">next videos</h2>
-      {nextVideos.map((video) => (
-        <nextVideos video={video} key={video.id} handleClick={handleClick} />
-      ))}
-    </section>
+    <Link to="`/videos/${video.id}">
+      {/* <section className="nextVideos">
+        <h2 className="nextVideos__title">next videos</h2>
+        {nextVideos.map((video) => (
+          <nextVideos video={video} key={video.id} />
+        ))}
+      </section> */}
+    </Link>
   );
 }
 

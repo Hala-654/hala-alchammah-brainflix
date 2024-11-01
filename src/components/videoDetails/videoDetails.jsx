@@ -1,32 +1,32 @@
 import "./VideoDetails.scss";
-import views from "../../assets/Icons/views.svg";
-import likes from "../../assets/Icons/likes.svg";
+import viewsIcon from "../../assets/Icons/views.svg";
+import likesIcon from "../../assets/Icons/likes.svg";
 
 function VideoDetails({ selectedVideo }) {
+  const { title, channel, timestamp, views, likes, description } =
+    selectedVideo;
   return (
     <div className="body-container">
-      <h1> {selectedVideo.title} </h1>
+      <h1> {title} </h1>
       <div className="body__author">
         <div className="body__author--info">
-          <h3>By {selectedVideo.channel}</h3>
-          <p className="silver">
-            {new Date(selectedVideo.timestamp).toLocaleDateString()}
-          </p>
+          <h3>By {channel}</h3>
+          <p className="silver">{new Date(timestamp).toLocaleDateString()}</p>
         </div>
         <div className="body__author--icon">
           <span className="silver">
-            <img className="icon__views" src={views} alt="views icon" />
-            <p>{selectedVideo.views}</p>
+            <img className="icon__views" src={viewsIcon} alt="views icon" />
+            <p>{views}</p>
           </span>
 
           <span className="silver">
-            <img className="icon__likes" src={likes} alt="likes icon" />
-            <p>{selectedVideo.likes}</p>
+            <img className="icon__likes" src={likesIcon} alt="likes icon" />
+            <p>{likes}</p>
           </span>
         </div>
       </div>
       <div className="body__text">
-        <span>{selectedVideo.description}</span>
+        <span>{description}</span>
       </div>
     </div>
   );

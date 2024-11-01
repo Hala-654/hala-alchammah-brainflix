@@ -1,30 +1,46 @@
-import { useState } from "react";
-import MainVideo from "../../components/MainVideo/MainVideo";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { BASE_URL, api_key } from "../../utils";
+import axios from "axios";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
-import Comments from "../../components/Comments/Comments";
-import videosData from "../../data/video-details.json";
+import MainVideo from "../../components/MainVideo/MainVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
+import Comments from "../../components/Comments/Comments";
+import VideoList from "../../components/VideoList/VideoList";
 
+function VideoDetailsPage({ videos }) {
+  let { id } = useParams();
 
-function VideoDetailsPage() {
-    const [selectedVideo, setSelecetedVideo] = useState(videosData[0]);
-    function handleClick(selectedVideo) {
-      setSelecetedVideo(selectedVideo);
-    }
-    return (
-      <>
-        <MainVideo selectedVideo={selectedVideo} />
-        <VideoDetails selectedVideo={selectedVideo} />
-        <Comments selectedVideo={selectedVideo} />
-        <div>
-          <NextVideos
-            selectedVideo={selectedVideo}
-            videosData={videosData}
-            handleClick={handleClick}
-          />
-        </div>
-      </>
-    );
+  if (!id) {
+    id = videos[0].id;
+  }
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  async function getVideoDetails() {
+    const { data } = await axios.get(`${BASE_URL}videos/${id}${api_key}`);
+    setSelectedVideo(data);
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getVideoDetails();
+  }, [id]);
+
+  //   console.log(videoDetails);
+
+  if (!selectedVideo) {
+    return <div>loading..</div>;
+  }
+
+  return (
+    <div>
+      <MainVideo selectedVideo={selectedVideo} />
+      <VideoDetails selectedVideo={selectedVideo} />
+      <Comments selectedVideo={selectedVideo} />
+      <NextVideos selectedVideo={selectedVideo} videosData={videos} />
+      <VideoList electedVideo={selectedVideo} videosData={videos} />
+    </div>
+  );
 }
 
-export default VideoDetailsPage
+export default VideoDetailsPage;
