@@ -30,14 +30,17 @@ function VideoUploadPage() {
     <>
       <div className="upload">
         <h1 className="upload__title">Upload Video</h1>
-        <form onSubmit={handleSubmit} className="upload__form--wrapper">
-          <div className="Upload__form">
-            <p className="upload__thumbnail">VIDEO THUMBNAIL</p>
-            <img
-              className="upload__img"
-              src={thumbnail}
-              alt="video thumbnail"
-            />
+        <form onSubmit={handleSubmit} className="upload__wrapper">
+          <div className="upload__form">
+            <div className="upload__details">
+              <h3 className="upload__thumbnail">VIDEO THUMBNAIL</h3>
+              <img
+                className="upload__img"
+                src={thumbnail}
+                alt="video thumbnail"
+              />
+            </div>
+
             <div className="upload__boxes">
               <p className="upload__video--title">TITLE YOUR VIDEO</p>
               <textarea
