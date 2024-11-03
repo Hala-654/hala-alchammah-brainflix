@@ -10,17 +10,15 @@ function Comments({ selectedVideo }) {
         <h3 className="comments__number">
           {selectedVideo.comments.length} comments
         </h3>
-        <h1 className="comments__title">JOIN THE CONVERSATION</h1>
         <div className="comments__add--comments">
-          <div>
-            <img
-              className="comments__img"
-              src={mohanAvatar}
-              alt="comment profile picture"
-            />
-          </div>
-          <div>
-            <form className="comments__form" id="form" method="post" action="#">
+          <img
+            className="comments__img"
+            src={mohanAvatar}
+            alt="comment profile picture"
+          />
+          <form className="comments__form" id="form" method="post" action="#">
+            <h1 className="comments__title">JOIN THE CONVERSATION</h1>
+            <div className="tablet">
               <textarea
                 className="comments__text--mobile"
                 id="comment"
@@ -37,14 +35,16 @@ function Comments({ selectedVideo }) {
                 placeholder="Add a new comment"
                 spellCheck="true"
               ></textarea>
+            </div>
+            <div>
               <Link to={`/`}>
                 <button className="comments__button">
                   <img src={addComment} alt="Add comment icon" />
                   <p>COMMENT</p>
                 </button>
               </Link>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
 
         <div className="display-comments__wrapper">
