@@ -6,7 +6,7 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import Comments from "../../components/Comments/Comments";
-// import VideoList from "../../components/VideoList/VideoList";
+import "../VideoDetailsPage/VideoDetailsPage.scss";
 
 function VideoDetailsPage({ videos }) {
   let { id } = useParams();
@@ -34,9 +34,15 @@ function VideoDetailsPage({ videos }) {
   return (
     <div>
       <MainVideo selectedVideo={selectedVideo} />
-      <VideoDetails selectedVideo={selectedVideo} />
-      <Comments selectedVideo={selectedVideo} />
-      <NextVideos selectedVideo={selectedVideo} videosData={videos} />
+      <div className="container">
+        <div className="container__details">
+          <VideoDetails selectedVideo={selectedVideo} />
+          <Comments selectedVideo={selectedVideo} />
+        </div>
+        <div className="container__videos">
+          <NextVideos selectedVideo={selectedVideo} videosData={videos} />
+        </div>
+      </div>
     </div>
   );
 }
