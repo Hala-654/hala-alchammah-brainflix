@@ -35,6 +35,14 @@ function Comments({ selectedVideo }) {
                 placeholder="Add a new comment"
                 spellCheck="true"
               ></textarea>
+              <div>
+                <Link to={`/`}>
+                  <button className="button__tablet">
+                    <img src={addComment} alt="Add comment icon" />
+                    <p>COMMENT</p>
+                  </button>
+                </Link>
+              </div>
             </div>
             <div>
               <Link to={`/`}>
