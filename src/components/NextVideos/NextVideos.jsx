@@ -10,16 +10,18 @@ function NextVideos({ selectedVideo, videosData }) {
       {videoData.map((video) => (
         <div className="NextVideos__content">
           <Link to={`/videos/${video.id}`}>
-            <div>
-              <img
-                src={video.image}
-                className="NextVideos__img"
-                alt="video cover image"
-              />
-            </div>
+            <img
+              src={video.image}
+              className="NextVideos__img"
+              alt="video cover image"
+            />
             <div className="NextVideos__description">
-              <h3 className="NextVideos__video--title">{video.title}</h3>
-              <p className="NextVideos__video--channel">{video.channel}</p>
+              <div>
+                <h3 className="NextVideos__video--title">{video.title}</h3>
+              </div>
+              <div>
+                <p className="NextVideos__video--channel">{video.channel}</p>
+              </div>
             </div>
           </Link>
         </div>
