@@ -3,7 +3,9 @@ import "../MainVideo/MainVideo.scss";
 function Video({ selectedVideo }) {
   return (
     <div className="video-container">
-      <video poster={selectedVideo.image} className="video" controls />
+      <div>
+        <video poster={selectedVideo.image} className="video" controls />
+      </div>
     </div>
   );
 }
