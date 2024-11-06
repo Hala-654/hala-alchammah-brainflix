@@ -8,7 +8,7 @@ function NextVideos({ selectedVideo, videosData }) {
     <div className="NextVideos">
       <h3 className="NextVideos__title">NEXT VIDEOS</h3>
       {videoData.map((video) => (
-        <div>
+        <div key={video.id}>
           <Link to={`/videos/${video.id}`} className="NextVideos__content">
             <img
               src={video.image}
