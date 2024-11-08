@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "./utils";
 import Header from "./components/Header/Header";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
@@ -10,13 +9,13 @@ import "./App.scss";
 
 function App() {
   const [videos, setVideos] = useState([]);
-
+  const BASE_URL = import.meta.env.VITE_API_URL;
   // asynchronous function
   async function getVideo() {
     try {
+      console.log(BASE_URL);
       const { data } = await axios.get(`${BASE_URL}/videos`);
       setVideos(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching videos:", error);
     }

@@ -69,7 +69,6 @@ function VideoUploadPage() {
             </div>
           </div>
           <div className="upload__button">
-            {/* <Link to={`/`}> */}
             <button type="submit" className="upload__button--publish">
               <img
                 src={publish}
@@ -78,7 +77,6 @@ function VideoUploadPage() {
               />
               <p>PUBLISH</p>
             </button>
-            {/* </Link> */}
             <button
               type="button"
               className="upload__button--cancel"
