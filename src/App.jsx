@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { api_key, BASE_URL } from "./utils";
+import { BASE_URL } from "./utils";
 import Header from "./components/Header/Header";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
@@ -9,17 +9,18 @@ import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import "./App.scss";
 
 function App() {
-  const [videos, setVideos] = useState(null);
-  // null is an initial state
+  const [videos, setVideos] = useState([]);
 
   // asynchronous function
   async function getVideo() {
-    const { data } = await axios.get(`${BASE_URL}videos/${api_key}`);
-    setVideos(data);
-    console.log(data);
-    // data are showing!
+    try {
+      const { data } = await axios.get(`${BASE_URL}/videos`);
+      setVideos(data);
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching videos:", error);
+    }
   }
-
   useEffect(() => {
     getVideo();
   }, []);

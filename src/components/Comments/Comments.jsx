@@ -4,6 +4,9 @@ import addComment from "../../assets/Icons/add_comment.svg";
 import { Link } from "react-router-dom";
 
 function Comments({ selectedVideo }) {
+  if (!selectedVideo || !selectedVideo.comments) {
+    return <div>No comments available</div>;
+  }
   return (
     <div className="section--comments">
       <div className="comments">
