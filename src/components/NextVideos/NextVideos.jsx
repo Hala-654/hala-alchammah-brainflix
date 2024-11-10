@@ -8,7 +8,6 @@ function NextVideos({ selectedVideo, videosData }) {
     return <div>Loading...</div>;
   }
   const videoData = videosData.filter((video) => video.id !== selectedVideo.id);
-  console.log(videosData);
   return (
     <div className="NextVideos">
       <h3 className="NextVideos__title">NEXT VIDEOS</h3>

@@ -11,7 +11,7 @@ function App() {
   const [videos, setVideos] = useState([]);
   const BASE_URL = import.meta.env.VITE_API_URL;
   // asynchronous function
-  async function getVideo() {
+  async function getVideos() {
     try {
       const { data } = await axios.get(`${BASE_URL}/videos`);
       setVideos(data);
@@ -20,7 +20,7 @@ function App() {
     }
   }
   useEffect(() => {
-    getVideo();
+    getVideos();
   }, []);
 
   if (!videos) {

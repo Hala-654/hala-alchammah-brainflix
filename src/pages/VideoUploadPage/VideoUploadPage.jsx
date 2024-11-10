@@ -1,5 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../VideoUploadPage/VideoUploadPage.scss";
 import publish from "../../assets/Icons/publish.svg";
 import axios from "axios";
@@ -14,12 +13,12 @@ function VideoUploadPage() {
     event.preventDefault();
     const title = event.target.title.value;
     const description = event.target.description.value;
+
     if (title === "" || description === "") {
       alert("please fill out both fields!");
       return;
     }
-    alert("You have successfully uploaded your video!");
-    postToAPI(title, description);
+    postToAPI(title, description, uploadImage);
     navigate("/");
   };
 
@@ -27,10 +26,11 @@ function VideoUploadPage() {
     navigate("/");
   };
 
-  const postToAPI = async (title, description) => {
+  const postToAPI = async (title, description, uploadImage) => {
     try {
       const response = await axios.post(`${BASE_URL}/videos`, {
         title,
+        image: { uploadImage },
         description,
       });
       alert(`The video with the title of: ${title} has been uploaded!`);
