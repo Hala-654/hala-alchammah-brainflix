@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BASE_URL } from "../../utils";
+// import { BASE_URL } from "../../utils";
 import axios from "axios";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import Comments from "../../components/Comments/Comments";
 import "../VideoDetailsPage/VideoDetailsPage.scss";
+
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function VideoDetailsPage({ videos }) {
   let { id } = useParams();

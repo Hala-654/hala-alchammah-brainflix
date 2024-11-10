@@ -1,46 +1,43 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../VideoUploadPage/VideoUploadPage.scss";
-import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/Icons/publish.svg";
 import axios from "axios";
+import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 function VideoUploadPage() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event.target);
-    if (!title || !description) {
+    const title = event.target.title.value;
+    const description = event.target.description.value;
+    if (title === "" || description === "") {
       alert("please fill out both fields!");
       return;
     }
     alert("You have successfully uploaded your video!");
-    // navigate("/");
-  };
-
-  const handleCancel = () => {
-    setTitle("");
-    setDescription("");
+    postToAPI(title, description);
     navigate("/");
   };
 
-  const postToAPI = async () => {
+  const handleCancel = () => {
+    navigate("/");
+  };
+
+  const postToAPI = async (title, description) => {
     try {
       const response = await axios.post(`${BASE_URL}/videos`, {
-        title: title,
-        description: description,
+        title,
+        description,
       });
       alert(`The video with the title of: ${title} has been uploaded!`);
       navigate("/");
     } catch (error) {
       console.log("Something went wrong in posting to API!");
     }
-    postToAPI();
   };
   return (
     <>
@@ -52,7 +49,7 @@ function VideoUploadPage() {
               <h3 className="upload__thumbnail">VIDEO THUMBNAIL</h3>
               <img
                 className="upload__img"
-                src={thumbnail}
+                src={uploadImage}
                 alt="video thumbnail"
               />
             </div>
@@ -66,8 +63,6 @@ function VideoUploadPage() {
                 rows="2"
                 placeholder="Add a title to your video"
                 spellCheck="false"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
               ></textarea>
               <p className="upload__video--description">
                 ADD A VIDEO DESCRIPTION
@@ -79,17 +74,11 @@ function VideoUploadPage() {
                 rows="6"
                 placeholder="Add a description to your video"
                 spellCheck="true"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
           </div>
           <div className="upload__button">
-            <button
-              type="submit"
-              className="upload__button--publish"
-              onClick={handleSubmit}
-            >
+            <button type="submit" className="upload__button--publish">
               <img
                 src={publish}
                 alt="publish icon"
