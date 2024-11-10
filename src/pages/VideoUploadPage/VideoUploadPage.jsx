@@ -18,7 +18,7 @@ function VideoUploadPage() {
       alert("please fill out both fields!");
       return;
     }
-    postToAPI(title, description, uploadImage);
+    postToAPI(title, description);
     navigate("/");
   };
 
@@ -26,11 +26,10 @@ function VideoUploadPage() {
     navigate("/");
   };
 
-  const postToAPI = async (title, description, uploadImage) => {
+  const postToAPI = async (title, description) => {
     try {
       const response = await axios.post(`${BASE_URL}/videos`, {
         title,
-        image: { uploadImage },
         description,
       });
       alert(`The video with the title of: ${title} has been uploaded!`);

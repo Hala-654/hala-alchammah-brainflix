@@ -13,11 +13,15 @@ function NextVideos({ selectedVideo, videosData }) {
       <h3 className="NextVideos__title">NEXT VIDEOS</h3>
       {videoData.map((video) => (
         <div key={video.id}>
-          <Link to={`/videos/${video.id}`} className="NextVideos__content">
+          <Link
+            to={`/videos/${video.id}`}
+            className="NextVideos__content"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <img
-              src={video.image}
+              src={`${BASE_URL}/${video.image}`}
               className="NextVideos__img"
-              alt="video cover image"
+              alt={video.title}
             />
             <div className="NextVideos__description">
               <h3 className="NextVideos__video--title">{video.title}</h3>

@@ -6,11 +6,11 @@ import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 
 import "./App.scss";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [videos, setVideos] = useState([]);
-  const BASE_URL = import.meta.env.VITE_API_URL;
-  // asynchronous function
+
   async function getVideos() {
     try {
       const { data } = await axios.get(`${BASE_URL}/videos`);
