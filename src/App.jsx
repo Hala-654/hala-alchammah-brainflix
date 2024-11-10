@@ -13,7 +13,6 @@ function App() {
   // asynchronous function
   async function getVideo() {
     try {
-      console.log(BASE_URL);
       const { data } = await axios.get(`${BASE_URL}/videos`);
       setVideos(data);
     } catch (error) {

@@ -3,6 +3,9 @@ import { useState } from "react";
 import "../VideoUploadPage/VideoUploadPage.scss";
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/Icons/publish.svg";
+import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function VideoUploadPage() {
   const [title, setTitle] = useState("");
@@ -21,10 +24,24 @@ function VideoUploadPage() {
     navigate("/");
   };
 
-  const handleCanel = () => {
+  const handleCancel = () => {
     setTitle("");
     setDescription("");
     navigate("/");
+  };
+
+  const postToAPI = async () => {
+    try {
+      const response = await axios.post(`${BASE_URL}/videos`, {
+        title: title,
+        description: description,
+      });
+      alert(`The video with the title of: ${title} has been uploaded!`);
+      navigate("/");
+    } catch (error) {
+      console.log("Something went wrong in posting to API!");
+    }
+    postToAPI();
   };
   return (
     <>
@@ -69,7 +86,11 @@ function VideoUploadPage() {
             </div>
           </div>
           <div className="upload__button">
-            <button type="submit" className="upload__button--publish">
+            <button
+              type="submit"
+              className="upload__button--publish"
+              onClick={handleSubmit}
+            >
               <img
                 src={publish}
                 alt="publish icon"
@@ -80,7 +101,7 @@ function VideoUploadPage() {
             <button
               type="button"
               className="upload__button--cancel"
-              onClick={handleCanel}
+              onClick={handleCancel}
             >
               CANCEL
             </button>
