@@ -14,14 +14,13 @@ function VideoUploadPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target);
-
+    // console.log(event.target);
     if (!title || !description) {
       alert("please fill out both fields!");
       return;
     }
     alert("You have successfully uploaded your video!");
-    navigate("/");
+    // navigate("/");
   };
 
   const handleCancel = () => {

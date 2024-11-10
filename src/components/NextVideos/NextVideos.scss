@@ -15,6 +15,9 @@
     border-top: 0.0625rem solid $Silver;
     width: 100%;
     padding: 1.5rem 0 1.5rem 0.9rem;
+    @include desktop {
+      border-top: none;
+    }
   }
 
   &__content {
@@ -31,11 +34,18 @@
     flex-shrink: 0;
     border-radius: 1.2rem;
     cursor: pointer;
+    @include desktop {
+      padding: 0 1rem 0.7rem 1rem;
+    }
   }
   &__description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 5rem;
     color: $BrainFlix-Black;
+    @include desktop {
+      justify-content: space-between;
+    }
   }
 }

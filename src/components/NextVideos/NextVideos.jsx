@@ -1,6 +1,8 @@
 import "../NextVideos/NextVideos.scss";
 import { Link } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function NextVideos({ selectedVideo, videosData }) {
   if (!videosData || !selectedVideo) {
     return <div>Loading...</div>;
@@ -20,7 +22,9 @@ function NextVideos({ selectedVideo, videosData }) {
             />
             <div className="NextVideos__description">
               <h3 className="NextVideos__video--title">{video.title}</h3>
-              <p className="NextVideos__video--channel">{video.channel}</p>
+              <span className="NextVideos__video--channel">
+                {video.channel}
+              </span>
             </div>
           </Link>
         </div>
